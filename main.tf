@@ -57,7 +57,7 @@ module "blog_alb" {
   name    = "blog-alb"
 
   load_balancer_type = "application"
-  
+
   vpc_id  = module.blog_vpc.vpc_id
   subnets = module.blog_vpc.public_subnets
 
@@ -113,7 +113,6 @@ module "blog_alb" {
       protocol         = "HTTP"
       port             = 80
       target_type      = "instance"
-      target_id        = aws_instance.blog.id
     }
   }
 
